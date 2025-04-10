@@ -24,6 +24,26 @@ Answer the question based on the above context: {question}
 """
 
 
+"""
+This script provides a command-line interface (CLI) for querying a Chroma database using a natural language query. 
+It retrieves the most relevant results based on similarity scores, formats the results into a prompt, and generates 
+a response using an OpenAI language model. The script also outputs the sources of the retrieved results.
+
+Main function to handle the query process.
+Steps:
+1. Parses the query text from the command-line arguments.
+2. Initializes the Chroma database with an embedding function.
+3. Searches the database for the most relevant results based on the query text.
+4. Formats the retrieved results into a prompt using a predefined template.
+5. Invokes an OpenAI language model to generate a response based on the prompt.
+6. Outputs the response and the sources of the retrieved results.
+
+Returns:
+    None if no relevant results are found or if the similarity score is too low.
+    if results are Found, it prints the formatted response and sources. the format can be highlighted in the
+    prompt template.
+"""
+
 def main():
     # Create CLI.
     parser = argparse.ArgumentParser()

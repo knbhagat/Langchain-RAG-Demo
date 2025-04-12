@@ -10,14 +10,13 @@
      conda install onnxruntime -c conda-forge
     ```
 
-
-2. Now run this command to install dependenies in the `requirements.txt` file. 
+2. Now run this command to install dependencies in the `requirements.txt` file. 
 
 ```python
 pip install -r requirements.txt
 ```
 
-3. Install markdown depenencies with: 
+3. Install markdown dependencies with: 
 
 ```python
 pip install "unstructured[md]"
@@ -45,14 +44,14 @@ python query_data.py "How does Alice meet the Mad Hatter?"
 
 # Project Description
 
-This project demonstrates a **Retrieval-Augmented Generation (RAG)** pipeline using **LangChain**, **Chroma**, and **OpenAI's GPT models**. The goal is to process and store textual data from the book *Alice in Wonderland* into a vector database and enable efficient retrieval of relevant information for answering user queries. The project showcases how to preprocess documents, split them into manageable chunks, and store them in a vector database for downstream tasks like question answering.
+This project demonstrates a **Retrieval-Augmented Generation (RAG)** pipeline using **LangChain**, **Chroma**, and **OpenAI's GPT models**. The goal is to process and store textual data into a vector database and enable efficient retrieval of relevant information for answering user queries. The project showcases how to preprocess documents, split them into manageable chunks, and store them in a vector database for downstream tasks like question answering.
 
 ---
 
 ### Key Features:
 1. **Document Loading**:
    - The project uses the `DirectoryLoader` from `langchain_community.document_loaders` to load `.md` files from the `data/books` directory.
-   - The loader processes the *Alice in Wonderland* markdown file, preparing it for further transformations.
+   - The loader processes the *Alice in Wonderland* markdown file and the **soccer_referee_rule_manual** markdown files, preparing them for further transformations.
 
 2. **Text Splitting**:
    - The `RecursiveCharacterTextSplitter` is used to split the loaded documents into smaller, overlapping chunks.
@@ -79,13 +78,13 @@ This project demonstrates a **Retrieval-Augmented Generation (RAG)** pipeline us
 
 6. **Extensibility**:
    - The modular design of the code allows for easy extension to other datasets or use cases.
-   - By simply replacing the input files in the `data/books` directory, the pipeline can process and store new documents.
+   - By simply replacing the input files in the `data/` directory, the pipeline can process and store new documents.
 
 ---
 
 ### Workflow:
 1. **Document Loading**:
-   - The `load_documents()` function reads all `.md` files from the `data/books` directory and returns a list of `Document` objects.
+   - The `load_documents()` function reads all `.md` files from the `data/` directory and returns a list of `Document` objects.
 
 2. **Text Splitting**:
    - The `split_text()` function takes the loaded documents and splits them into smaller chunks using the `RecursiveCharacterTextSplitter`.
@@ -118,5 +117,5 @@ This project is a foundational implementation of a **RAG pipeline**. It can be e
 - Enable semantic search over large document collections.
 - Serve as a backend for chatbots or virtual assistants.
 
-By processing *Alice in Wonderland*, the project demonstrates how to handle real-world text data and prepare it for advanced AI applications.
+By processing *Alice in Wonderland* and the **soccer_referee_rule_manual**, the project demonstrates how to handle real-world text data and prepare it for advanced AI applications.
 
